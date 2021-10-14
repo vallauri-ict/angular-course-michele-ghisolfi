@@ -1,17 +1,17 @@
 <!-- <p [ngStyle]="{backgroundColor: student.gender == 'F' ? 'pink' : 'cyan'}">
     {{ student.name }} - {{ student.hobby }}
 </p> -->
-<p class="cliccable" [ngClass]="{
+<span class="cliccable" [ngClass]="{
     'female': student.gender=='F',
     'male': student.gender=='M',
-    'underlined': student.hobby=='Paddle' }"
+    'underlined': student.hobby=='Paddle' }" 
     (click)="onStudentClick()">
-    {{ student.name }} 
-    <!-- <span *ngIf="student.isPro">(professionista)</span> -->
-    <!-- <span *ngIf="!student.isPro">(dilettante)</span> -->
-    <span *ngIf="student.isPro; else noPro">(professionista)</span>
-    <ng-template #noPro>
-        <span>(dilettante)</span>
-    </ng-template>
-    - {{ student.hobby }}
-</p>
+  {{ student.name }}
+  <!-- <span *ngIf="student.isPro">(professionista)</span> -->
+  <!-- <span *ngIf="!student.isPro">(dilettante)</span> -->
+  <span *ngIf="student.isPro; else noPro">(professionista)</span>
+  <ng-template #noPro>
+    <span>(dilettante)</span>
+  </ng-template>
+  - {{ student.hobby }}
+</span>
