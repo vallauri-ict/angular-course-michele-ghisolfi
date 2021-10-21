@@ -37,6 +37,29 @@
     <span>{{ title }} APP IS RUNNING!</span>
   </div>
 
+  <h2>Add student</h2>
+  <label for="txtName"> Student Name: </label>
+  <input type="text" id="txtName" #txtName [(ngModel)]="studentName">
+
+  <div class="gender-selection">
+    <div>
+      <input id="male" type="radio" value="M" name="gender" [(ngModel)]="studentGender">
+      <label for="male">Male</label>
+    </div>
+    <div>
+      <input id="female" type="radio" value="F" name="gender" [(ngModel)]="studentGender">
+      <label for="female">Female</label>
+    </div>
+  </div>
+
+  <select class="hobbie-selection" [(ngModel)]="studentHobbie">
+    <option *ngFor='let hobbie of hobbies' [value]="hobbie">
+      {{hobbie}}
+    </option>
+  </select>
+
+  <button [disabled]="studentName.length==0" (click)="onAddStudent()"> Add student </button>
+
   <h2> The students:</h2>
   <!-- <div *ngFor="let item of studentList">
     {{item.name}} - {{item.hobby}}
@@ -44,10 +67,10 @@
 
   <!-- <app-student *ngFor="let item of studentList" [student]="item">  </app-student> -->
   <div class="student" *ngFor="let item of studentList; let i = index">
-    <span>{{i}} => </span>
+    <span>{{i + 1}} => </span>
     <app-student [student]="item"></app-student>
   </div>
-  
+
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
     <path id="Path_39" data-name="Path 39"
