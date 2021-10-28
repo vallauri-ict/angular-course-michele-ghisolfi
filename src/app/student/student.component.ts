@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -7,8 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class StudentComponent implements OnInit {
-
   @Input() student:any;
+  // @Output() 
+
   constructor() {  }
 
   private randomStudentPro() {
@@ -22,5 +23,9 @@ export class StudentComponent implements OnInit {
 
   onStudentClick() {
     this.student.isPro = !this.student.isPro;
+  }
+
+  onDeleteStudent() {
+
   }
 }

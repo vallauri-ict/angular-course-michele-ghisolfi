@@ -24,6 +24,15 @@ button:disabled {
   color: grey;
 }
 
+button.delete{
+  background-color: transparent;
+  margin-left: 5px;
+  padding: 0;
+  width: 10px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
 .gender-selection{
   margin: 10px auto;
 }
@@ -39,6 +48,7 @@ button:disabled {
 .student {
   min-width: 350px;
   text-align: left;
+  height: 40px;
 }
 
 .student span {

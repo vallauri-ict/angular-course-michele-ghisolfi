@@ -24,7 +24,7 @@ export class AppComponent {
     { name: 'Ivan Anjelovski', hobby: 'Karate', gender: 'M', isPro: false }
   ]
 
-  hobbies = ["Karate", "Paddle", "Volley", "Tennis", "Soccer"]
+  hobbies = ["Karate", "Paddle", "Volley", "Tennis", "Soccer", "Basket"]
 
   studentList: any = []
 
@@ -52,5 +52,9 @@ export class AppComponent {
     this.studentList.push(newStudent)
     this.studentName = ""
     this.txtName.nativeElement.focus()
+  }
+
+  onDeleteStudent(index:Number) {
+    this.studentList.splice(index, 1)
   }
 }
