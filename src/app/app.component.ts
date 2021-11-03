@@ -7,7 +7,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 export class AppComponent {
   @ViewChild("txtName") txtName!: ElementRef;
-
+ 
   title = '5 INF B 2021/2022';
 
   studentRepository = [
@@ -30,14 +30,13 @@ export class AppComponent {
 
   studentName: string = ""
   studentGender: string = "F"
-  studentHobbie: string = "" //this.hobbies[0]
+  studentHobbie: string = ""
 
   constructor() {
     for (let i = 0; i < 4; i++) {
       let num = Math.floor(Math.random() * this.studentRepository.length)
-      console.log(num)
-      let dummyStudent = this.studentRepository[num]
-      this.studentList.push(dummyStudent)
+      let tempStudent = this.studentRepository[num]
+      this.studentList.push(tempStudent)
       this.studentRepository.splice(num, 1)
     }
   }
@@ -56,5 +55,10 @@ export class AppComponent {
 
   onDeleteStudent(index:Number) {
     this.studentList.splice(index, 1)
+  }
+
+  onStudentDeleteEvent(student: any) {
+    // alert("da cancellare: " + student.name);
+    this.studentList.splice(this.studentList.indexOf(student), 1);
   }
 }

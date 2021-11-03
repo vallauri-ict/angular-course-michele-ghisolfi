@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 
 export class StudentComponent implements OnInit {
   @Input() student:any;
-  // @Output() 
+  @Output() studentDeleteEvent = new EventEmitter<any>()
 
   constructor() {  }
 
@@ -26,6 +26,6 @@ export class StudentComponent implements OnInit {
   }
 
   onDeleteStudent() {
-
+    this.studentDeleteEvent.emit(this.student)
   }
 }
